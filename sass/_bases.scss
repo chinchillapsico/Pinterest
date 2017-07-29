@@ -1,45 +1,197 @@
-*{
-	font-family: $body_font;
+//colors
+$color_romance_approx: #fefefe;
+$alabaster: #fafafa;
+$color_gondola_40_approx: rgba(34, 25, 25, 0.4);
+$color_mine_shaft_approx: #333;
+
+//fonts
+$font_0: Arial;
+$font_1: sans-serif;
+
+#wrapper {
+	width: 100%;
+	max-width: 1000px;
+	min-width: 100px;
+	margin: 0;
 }
-.navbar-nav{
-	li:hover{
-		background-color:$background_uno;
-		a:hover{
-			color:$color_text_titulo;
-		}
+#columns {
+	//Instead of the line below you could use @include column-count($count)
+	column-count: 1;
+	//Instead of the line below you could use @include column-gap($width)
+	column-gap: 5px;
+	column-fill: auto;
+	&:hover .pin:not(:hover) {
+		opacity: 0.4;
 	}
 }
-.seccion_uno{
-	background-color:$background_uno;
-	padding-top:$padding;
-	h1, h3{
-		color:$color_text_titulo;
-		text-align:$text_center;
-	}
-}
-.seccion_dos{
-	background-color:$background_dos;
-	padding-top:$padding_footer;
-	@include excel();
-}
-.seccion_tres{
-	background-color:$background_dos;
-	padding-top:$padding_footer;
-	.desktop{
-		width:$width_desktop;
-		padding:$padding;
-	}
-	h1, h2, h3{
-		text-align:$text_center;
-	}
+.pin {
+	.img-pinterest{
+	 	border-radius: 8%;
+	 	height: 200px;
+	 	margin: 0 auto;
+	 }
+	display: inline-block;
+	width: auto;
+	
+	background: $color_romance_approx;
+	border: 2px solid $alabaster;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 0 1px 2px $color_gondola_40_approx;
+	margin: 0 2px 15px;
+	//Instead of the line below you could use @include column-break-inside($value)
+	column-break-inside: avoid;
+	padding: 10px;
+	padding-bottom: 5px;
+	opacity: 1;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: all .1s ease;
 	p{
-	@include excel();
+		display:inline-block;
+	}
+	
+}
+p {
+	font: 12px/18px $font_0, $font_1;
+	color: $color_mine_shaft_approx;
+	margin: 0;
+}
+@media(min-width: 960px) {
+	#columns {
+		//Instead of the line below you could use @include column-count($count)
+		column-count: 3;
+	}
+}
+@media(min-width: 1100px) {
+	#columns {
+		//Instead of the line below you could use @include column-count($count)
+		column-count: 5;
+
 	}
 }
 
-@media (max-width: 600px){
-	.seccion_uno{
-		background-color:$background_uno;
-		padding-top:$padding_media;
-	}
+// Font
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:700);
+
+// Variables
+$maven-orange: #d8765d;
+$maven-red: #bc5e47;
+$gray-alto: rgb(217, 217, 217);
+
+$global-border-color: $gray-alto;
+$global-radius: 4px;
+
+// Button Group Mixin
+@mixin button-group(
+  $background-color: white,
+  $background-hover-color: white,
+  $border-width: 2px,
+  $border-color: $global-border-color,
+  $border-radius: $global-radius,
+  $color: $border-color,
+  $color-hover: $border-color,
+  $darken: 20%,
+  $icon-margin: 3px,
+  $inner-button-class: 'btn-inner',
+  $max-width: 40em,
+  $padding: 12px 20px ) {
+    
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  
+  // Test for Flexbox using Modernizr
+  .flexbox & {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+  }
+
+  // Use Display Table as a fall back for older browsers
+  .#{$inner-button-class} {
+    display: table-cell;
+    position: relative;
+    margin-left: -2px;
+    border: $border-width solid $border-color;
+    color: $color;
+    padding: $padding;
+    font-size: 0.8rem;
+    position: relative;
+    text-align: center;
+    transition: all 0.1s ease-in;
+    vertical-align: middle;
+    z-index: 0;
+    
+    .flexbox & {
+      flex: 1 1 0;
+      display: inline-block;
+    }
+    
+    @content;
+    
+    // Negate added borders
+    + .#{$inner-button-class} {
+      margin-left: -$border-width;
+    } 
+    
+    // If a border radius is present, add it.
+    @if $border-radius {
+      &:first-child {
+        border-radius: $border-radius 0 0 $border-radius;
+      }
+
+      &:last-child {
+        border-radius: 0 $border-radius $border-radius 0;
+      }
+    }
+
+    // Create the hover effect.
+    &:hover {
+      background: $background-hover-color;
+      border-color: $background-hover-color;
+      color: $color-hover;
+      cursor: pointer;
+      z-index: 1;
+    }
+  }
+  
+  // This breakpoint is random for Codepen, so you may need to update it.
+  @media screen and (max-width: 34.75em) {
+    .flexbox & {
+      flex-direction: column;
+    }
+
+    .#{$inner-button-class} {
+      border-bottom: 0;
+      .flexbox & {
+        flex: auto;
+      }
+      &:first-child {
+        border-radius: $border-radius $border-radius 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 0 $border-radius $border-radius;
+        border-bottom: $border-width solid $border-color;
+      }
+    }
+  }
+}
+
+// Use the mixin above like so:
+.btn-group {  
+  @include button-group( 
+    $background-hover-color: $maven-orange,  
+    $color: #bcbcbc, 
+    $color-hover: white
+  );
+}
+
+
+
+// Extra Styling
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+.container {
+  padding: 50px;
 }
