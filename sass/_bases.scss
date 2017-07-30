@@ -3,7 +3,7 @@ $color_romance_approx: #fefefe;
 $alabaster: #fafafa;
 $color_gondola_40_approx: rgba(34, 25, 25, 0.4);
 $color_mine_shaft_approx: #333;
-
+display
 //fonts
 $font_0: Arial;
 $font_1: sans-serif;
@@ -78,7 +78,7 @@ $maven-red: #bc5e47;
 $gray-alto: rgb(217, 217, 217);
 
 $global-border-color: $gray-alto;
-$global-radius: 4px;
+$global-radius: 8px;
 
 // Button Group Mixin
 @mixin button-group(
@@ -119,6 +119,7 @@ $global-radius: 4px;
     text-align: center;
     transition: all 0.1s ease-in;
     vertical-align: middle;
+    border-radius: 8px;
     z-index: 0;
     
     .flexbox & {
@@ -187,11 +188,14 @@ $global-radius: 4px;
 }
 
 
-
 // Extra Styling
 body {
   font-family: 'Noto Sans', sans-serif;
 }
 .container {
   padding: 50px;
+}
+.navbar-brand{
+	font-size: 10px; 
+	font-weight:normal;
 }
