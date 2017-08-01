@@ -3,10 +3,11 @@ var imagejson = [{"id":1,"title":"Fuke zisukje bu dibas sik.","description":"Jus
 
 
 $( document ).ready(function() {
+    $("#myModal").hide();
     //scroll de la página
     $(window).scroll(function() {
         if($(window).scrollTop() + $(window).height() == $(document).height()) {
-        alert("bottom!");
+        alert("It seems that you have reached the end!");
         }
     });
 
@@ -32,14 +33,21 @@ $( document ).ready(function() {
 
     //retorna el temple ya lleno con las imégenes
     $("#columns").html(temple);
-
+   
     
 }); //fin document.ready
-
+ //funcion del modal 
     function modal(num) {
+    $("#myModal").show();    
+   // var modal = $('<span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>' + num + '<div id="caption"></div>');
+    $("#myModal").hide();
     console.log(num);
+    //$('#myModal').append(modal);
         
     }
+    
+
+ 
 
     /*function modal(num){
          var temple2 = '';

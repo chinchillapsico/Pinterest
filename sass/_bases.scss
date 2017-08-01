@@ -6,6 +6,12 @@ $gray2: #333;
 $font_0: Arial;
 $font_1: sans-serif;
 
+.user-icon{
+	right: 30%;
+}
+.menu-nav{
+	right: 25%;
+}
 #wrapper {
 	width: 100%;
 	max-width: 1200px;
@@ -54,13 +60,13 @@ p {
 
 @media(min-width: 960px) {
 	#columns {
-		//Instead of the line below you could use @include column-count($count)
+		
 		column-count: 3;
 	}
 }
 @media(min-width: 1100px) {
 	#columns {
-		//Instead of the line below you could use @include column-count($count)
+		
 		column-count: 5;
 
 	}
@@ -71,17 +77,19 @@ p {
 
 // estilos botones
 $btn-color: #CB333B;
+$btn-color2: #BAC5B9; 
 
-
-$white: $white;
 $global-radius: 8px;
 
+.navbar-form .form-control {
+	width: 700px;
+}
 // Button Group Mixin
 @mixin button-group(
-  $background-color: white,
+  $background-color: $btn-color2,
   $background-hover-color: white,
   $border-width: 2px,
-  $border-color: $white,
+  $border-color: #3E2B2E,
   $border-radius: $global-radius,
   $color: $border-color,
   $color-hover: $border-color,
@@ -94,23 +102,21 @@ $global-radius: 8px;
   display: table;
   width: 100%;
   table-layout: fixed;
-  
-  // Test for Flexbox using Modernizr
+
   .flexbox & {
     display: flex;
     flex-flow: row wrap;
     align-items: stretch;
   }
-
-  // Use Display Table as a fall back for older browsers
   .#{$inner-button-class} {
     display: table-cell;
     position: relative;
     margin-left: -2px;
+
     border: $border-width solid $border-color;
     color: $color;
     padding: $padding;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     position: relative;
     text-align: center;
     transition: all 0.1s ease-in;
@@ -130,16 +136,7 @@ $global-radius: 8px;
       margin-left: -$border-width;
     } 
     
-    // If a border radius is present, add it.
-    @if $border-radius {
-      &:first-child {
-        border-radius: $border-radius 0 0 $border-radius;
-      }
-
-      &:last-child {
-        border-radius: 0 $border-radius $border-radius 0;
-      }
-    }
+  
 
     // Create the hover effect.
     &:hover {
@@ -178,7 +175,7 @@ $global-radius: 8px;
 .btn-group {  
   @include button-group( 
     $background-hover-color: $btn-color,  
-    $color: #bcbcbc, 
+    $color: #332F21, 
     $color-hover: white
   );
 }
@@ -189,7 +186,3 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
- .fa .icon-nav{
-	text-align: center;
-	color: $btn-color;
-}

@@ -5808,6 +5808,12 @@ button.close {
   .hidden-print {
     display: none !important; } }
 /*-------------------------------estilos imágenes-----------------------------*/
+.user-icon {
+  right: 30%; }
+
+.menu-nav {
+  right: 25%; }
+
 #wrapper {
   width: 100%;
   max-width: 1200px;
@@ -5851,6 +5857,9 @@ p {
 @media (min-width: 1100px) {
   #columns {
     column-count: 5; } }
+.navbar-form .form-control {
+  width: 700px; }
+
 .btn-group {
   display: table;
   width: 100%;
@@ -5863,10 +5872,10 @@ p {
     display: table-cell;
     position: relative;
     margin-left: -2px;
-    border: 2px solid #fefefe;
-    color: #bcbcbc;
+    border: 2px solid #3E2B2E;
+    color: #332F21;
     padding: 12px 20px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     position: relative;
     text-align: center;
     transition: all 0.1s ease-in;
@@ -5878,10 +5887,6 @@ p {
       display: inline-block; }
     .btn-group .btn-inner + .btn-inner {
       margin-left: -2px; }
-    .btn-group .btn-inner:first-child {
-      border-radius: 8px 0 0 8px; }
-    .btn-group .btn-inner:last-child {
-      border-radius: 0 8px 8px 0; }
     .btn-group .btn-inner:hover {
       background: #CB333B;
       border-color: #CB333B;
@@ -5899,13 +5904,9 @@ p {
         border-radius: 8px 8px 0 0; }
       .btn-group .btn-inner:last-child {
         border-radius: 0 0 8px 8px;
-        border-bottom: 2px solid #fefefe; } }
+        border-bottom: 2px solid #3E2B2E; } }
 
 body {
   font-family: 'Noto Sans', sans-serif; }
-
-.fa .icon-nav {
-  text-align: center;
-  color: #CB333B; }
 
 /*# sourceMappingURL=main.css.map */
